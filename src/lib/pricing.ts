@@ -62,8 +62,18 @@ export function calculateCredits(
 }
 
 export function selectProvider(type: TrackType, vocals: Vocals): string {
+  const standaloneMode = import.meta.env.VITE_STANDALONE_MODE === '1';
+  const elevenEnabled = import.meta.env.VITE_ELEVEN_MUSIC_ENABLED === '1';
+
   if (type === 'SONG' && vocals !== 'NONE') {
-    return 'eleven';
+    if (elevenEnabled) {
+      return 'eleven';
+    }
+    throw new Error('Vocal songs require Eleven Music API (not yet enabled)');
+  }
+
+  if (standaloneMode && vocals === 'NONE') {
+    return 'musicgen';
   }
 
   if (type === 'JINGLE') {

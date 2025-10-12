@@ -3,10 +3,11 @@ import { Navigation } from './components/Navigation';
 import { MusicBuilder } from './components/MusicBuilder';
 import { TrackLibrary } from './components/TrackLibrary';
 import { CreditsView } from './components/CreditsView';
+import { AdminPanel } from './components/AdminPanel';
 import { getCurrentUser } from './lib/db';
 
 function App() {
-  const [currentView, setCurrentView] = useState<'builder' | 'library' | 'credits'>('builder');
+  const [currentView, setCurrentView] = useState<'builder' | 'library' | 'credits' | 'admin'>('builder');
   const [credits, setCredits] = useState(0);
   const [loading, setLoading] = useState(true);
 
@@ -46,6 +47,7 @@ function App() {
         {currentView === 'builder' && <MusicBuilder />}
         {currentView === 'library' && <TrackLibrary />}
         {currentView === 'credits' && <CreditsView />}
+        {currentView === 'admin' && <AdminPanel />}
       </main>
     </div>
   );

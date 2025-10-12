@@ -1,8 +1,8 @@
-import { Music, Library, CreditCard, User } from 'lucide-react';
+import { Music, Library, CreditCard, User, Shield } from 'lucide-react';
 
 interface NavigationProps {
-  currentView: 'builder' | 'library' | 'credits';
-  onViewChange: (view: 'builder' | 'library' | 'credits') => void;
+  currentView: 'builder' | 'library' | 'credits' | 'admin';
+  onViewChange: (view: 'builder' | 'library' | 'credits' | 'admin') => void;
   credits?: number;
 }
 
@@ -52,6 +52,18 @@ export function Navigation({ currentView, onViewChange, credits = 0 }: Navigatio
               >
                 <CreditCard className="w-4 h-4" />
                 Credits
+              </button>
+
+              <button
+                onClick={() => onViewChange('admin')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+                  currentView === 'admin'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <Shield className="w-4 h-4" />
+                Admin
               </button>
             </div>
           </div>
