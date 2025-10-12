@@ -76,7 +76,8 @@ export async function createTrack(
   userId: string,
   brief: Brief,
   type: TrackType,
-  provider: string
+  provider: string,
+  promptHash?: string
 ): Promise<Track> {
   const { data, error } = await supabase
     .from('tracks')
@@ -88,6 +89,7 @@ export async function createTrack(
       type,
       provider,
       status: 'queued',
+      prompt_hash: promptHash,
     })
     .select()
     .single();

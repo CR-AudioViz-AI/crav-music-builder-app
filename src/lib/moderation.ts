@@ -32,7 +32,8 @@ const HATE_SPEECH_PATTERNS = [
 ];
 
 const EXPLICIT_CONTENT_PATTERNS = [
-  /\b(fuck|shit|bitch|ass|damn|hell)\b/i,
+  /\b(fuck|shit|bitch|damn|hell)/i,
+  /\bass\b/i,
 ];
 
 export interface ModerationResult {
