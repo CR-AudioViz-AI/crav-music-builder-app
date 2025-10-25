@@ -289,3 +289,5 @@ Commercial music generation with legal compliance built-in. All generated tracks
 Built with React, TypeScript, Tailwind CSS, and Supabase.
 
 <!-- Deployment triggered: 2025-10-25 01:27:30 UTC -->
+
+<!-- Vite config updated: 2025-10-25 01:31:18 UTC -->
