@@ -299,3 +299,6 @@ Built with React, TypeScript, Tailwind CSS, and Supabase.
 
 
 <!-- Deploy trigger: 2025-10-25 14:51:58.120399 -->
+
+
+<!-- Deploy: Add VITE env vars - 2025-10-25 14:57:31.111474 -->
